@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+
+    <ion-title>
+      <div style="white-space: normal;">
+        INFLASI TAHUN KE TAHUN
+      </div>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="dark" [fullscreen]="true">
+  <br>
+  
+  <ion-title>
+    <div style="white-space: normal;">
+      BADAN PUSAT STATISTIK
+    </div>
+
+    <div style="white-space: normal;">
+      KOTA MADIUN
+    </div>
+  </ion-title>
+
+  <ion-card color="light">
+    <ion-card-header>
+      <ion-card-title>INFLASI TAHUN KE TAHUN</ion-card-title>
+    </ion-card-header>
+    
+    <ion-card-content>
+      <canvas id="myChart"></canvas>
+    </ion-card-content>
+  </ion-card>
+  <ion-card color="light">
+    <ion-card-header>RINCIAN INFLASI</ion-card-header>
+    <ion-card-content>
+      <ion-row class="row">
+        <ion-col>TAHUN</ion-col>
+        <ion-col>PERSENTASE</ion-col>
+      </ion-row>
+
+      <ion-row class="row" *ngFor="let item of items; index as i">
+        <ion-col>{{tahun[i]}}</ion-col>
+        <ion-col>{{persentase[i]}}%</ion-col>
+      </ion-row>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

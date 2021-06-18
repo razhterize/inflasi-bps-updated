@@ -1,3 +1,43 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+  <ion-menu side="start" menuId="first" contentId="menu" enable-menu-with-back-views="false">
+    <ion-header>
+      <ion-toolbar color='dark'>
+        <br>
+          <ion-label>
+            <ion-img src="assets/Logo BPS.png"></ion-img>
+          </ion-label>
+          <br>
+          <ion-title>
+            <div style="white-space: normal;">
+              BADAN PUSAT STATISTIK
+            </div>
+            <div style="white-space: normal;">
+              KOTA MADIUN
+            </div>
+          </ion-title>
+        <br>
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-content color="light">
+      <ion-list *ngFor="let page of pages"> 
+        <ion-menu-toggle autohide="false">
+          <ion-item (click)="goTo(page)">
+            <ion-icon [name]="page.icon" slot="start"></ion-icon>
+            <ion-label class="ion-text-wrap">{{page.pagename}}</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+      </ion-list>
+
+      <ion-list> 
+        <ion-menu-toggle>
+          <ion-item (click)="keluar()">
+            <ion-icon name="exit-outline" slot="start"></ion-icon>
+            <ion-label class="ion-text-wrap">KELUAR</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+  <ion-router-outlet id="menu"></ion-router-outlet>
 </ion-app>

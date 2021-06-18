@@ -1,0 +1,177 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      <div style="white-space: normal;">
+        OLAH DATA INFLASI BULAN SEBELUMNYA
+      </div>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="dark" [fullscreen]="true">
+
+  <br>
+
+  <ion-title>
+    <div style="white-space: normal;">
+      BADAN PUSAT STATISTIK
+    </div>
+
+    <div style="white-space: normal;">
+      KOTA MADIUN
+    </div>
+  </ion-title>
+
+  <ion-card-content>
+    <ion-card color="light">
+
+      <ion-title>
+        <div style="white-space: normal;">
+          TAMBAH DATA
+        </div>
+      </ion-title>
+
+      <ion-row>
+        <ion-col>
+          <ion-title>
+            <div style="white-space: normal;">
+              TAHUN
+            </div>
+          </ion-title>
+        </ion-col>
+        <ion-col>
+          <ion-title>
+            <div style="white-space: normal;">
+              BULAN
+            </div>
+          </ion-title>
+        </ion-col>
+        <ion-col>
+          <ion-title>
+            <div style="white-space: normal;">
+              %
+            </div>
+          </ion-title>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          <ion-list>
+            <ion-item>
+              <!-- <ion-select align="center" type="text" [(ngModel)]="tahun" placeholder="Tahun">
+                <ion-select-option align="center" *ngFor='let tahun of pilihTahun'>{{tahun}}</ion-select-option>
+              </ion-select> -->
+              <ion-datetime placeholder='TAHUN' min='2008' [(ngModel)]='thn' displayFormat='YYYY' (ionChange)='getYear()'></ion-datetime>
+            </ion-item>
+          </ion-list>
+        </ion-col>
+        <ion-col>
+          <ion-list>
+            <ion-item>
+              <ion-select align="center" type="text" [(ngModel)]="bulan" placeholder="Bulan">
+                <ion-select-option align="center" *ngFor='let bulan of pilihBulan'>{{bulan}}</ion-select-option>
+              </ion-select>
+            </ion-item>
+          </ion-list>
+        </ion-col>
+        <ion-col>
+          <ion-list>
+            <ion-item>
+              <ion-input align="center" type="text" [(ngModel)]="persentase" placeholder="TAMBAH DATA"></ion-input>
+            </ion-item>
+          </ion-list>
+        </ion-col>
+      </ion-row>
+
+      <ion-button expand="block" (click)="add()">add</ion-button>
+    </ion-card>
+
+    <br><br>
+
+    <ion-card color="light" *ngFor="let item of items">
+
+      <ion-title>
+        <div style="white-space: normal;">
+          EDIT DATA
+        </div>
+      </ion-title>
+
+      <ion-row>
+        <ion-col>
+          <ion-title>
+            <div style="white-space: normal;">
+              TAHUN
+            </div>
+          </ion-title>
+        </ion-col>
+        <ion-col>
+          <ion-title>
+            <div style="white-space: normal;">
+              BULAN
+            </div>
+          </ion-title>
+        </ion-col>
+        <ion-col>
+          <ion-title>
+            <div style="white-space: normal;">
+              %
+            </div>
+          </ion-title>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          <ion-list>
+            <ion-item>
+              <ion-title>
+                <div style="white-space: normal;">
+                  {{item.tahun}}
+                </div>
+              </ion-title>
+            </ion-item>
+          </ion-list>
+        </ion-col>
+        <ion-col>
+          <ion-list>
+            <ion-item>
+              <ion-title>
+                <div style="white-space: normal;">
+                  {{item.bulan}}
+                </div>
+              </ion-title>
+            </ion-item>
+          </ion-list>
+        </ion-col>
+        <ion-col>
+          <ion-list>
+            <ion-item>
+              <ion-title>
+                <div style="white-space: normal;">
+                  {{item.persentase}}
+                </div>
+              </ion-title>
+            </ion-item>
+          </ion-list>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          <ion-list>
+            <ion-item>
+              <ion-input align="center" type="text" [(ngModel)]="persentase" placeholder="EDIT %"></ion-input>
+            </ion-item>
+          </ion-list>
+        </ion-col>
+      </ion-row>
+
+      <ion-button expand="block" (click)="update(item)">update</ion-button>
+      <ion-button expand="block" (click)="delete(item)">delete</ion-button>
+    </ion-card>
+</ion-card-content>
+</ion-content>

@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+
+    <ion-title>
+      <div style="white-space: normal;">
+        OLAH DATA INFLASI
+      </div>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="dark" [fullscreen]="true">
+  <br>
+  
+  <ion-title>
+    <div style="white-space: normal;">
+      BADAN PUSAT STATISTIK
+    </div>
+  </ion-title>
+
+  <ion-card color="light">
+    <ion-card-header>
+      <ion-card-title>SILAHKAN PILIH MENU</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content class="content">
+      <ion-list class="ls">
+        <ion-item>
+          <ion-label style="white-space: normal;" posisition="floating">INFLASI BULAN INI</ion-label>
+          <ion-button fill="solid" expand="block" (click)="ibi()">MASUK</ion-button>
+        </ion-item>
+
+        <ion-item>
+          <ion-label style="white-space: normal;" posisition="floating">INFLASI TAHUN KE TAHUN</ion-label>
+          <ion-button fill="solid" expand="block" (click)="itkt()">MASUK</ion-button>
+        </ion-item>
+
+        <ion-item>
+          <ion-label style="white-space: normal;" posisition="floating">ANDIL INFLASI</ion-label>
+          <ion-button fill="solid" expand="block" (click)="ai()">MASUK</ion-button>
+        </ion-item>
+
+        <ion-item>
+          <ion-label style="white-space: normal;" posisition="floating">INFLASI BULAN SEBELUMNYA</ion-label>
+          <ion-button fill="solid" expand="block" (click)="ibs()">MASUK</ion-button>
+        </ion-item>
+      </ion-list>
+
+      <ion-button fill="solid" expand="block" (click)="logout()">Logout</ion-button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

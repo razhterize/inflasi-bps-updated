@@ -1,20 +1,43 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+
     <ion-title>
-      Blank
+      <div style="white-space: normal;">
+        BERANDA
+      </div>
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content color='dark' [fullscreen]="true">
+  <br>
+  
+  <ion-title>
+    <div style="white-space: normal;">
+      BADAN PUSAT STATISTIK
+    </div>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+    <div style="white-space: normal;">
+      KOTA MADIUN
+    </div>
+  </ion-title>
+
+  <ion-card color="light">
+    <ion-card-header>
+      <ion-card-title>IDAMAN</ion-card-title>
+      <ion-card-subtitle>INFLASI DALAM GENGGAMAN</ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-img src="assets/icon.png"></ion-img>
+
+    <ion-card-content>
+      Merupakan salah satu media BADAN PUSAT STATISTIK KOTA MADIUN yang berorientasi pada informasi statistik meliputi: <br>
+      1. INFLASI BULANAN INI <br>
+      2. INFLASI TAHUN KE TAHUN <br>
+      3. ANDIL INFLASI
+    </ion-card-content>
+  </ion-card>
 </ion-content>

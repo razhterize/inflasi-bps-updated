@@ -1,0 +1,68 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+
+    <ion-title>
+      <div style="white-space: normal;">
+        INFLASI
+      </div>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="dark" [fullscreen]="true">
+  <br>
+  
+  <ion-title>
+    <div style="white-space: normal;">
+      BADAN PUSAT STATISTIK
+    </div>
+
+    <div style="white-space: normal;">
+      KOTA MADIUN
+    </div>
+  </ion-title>
+
+  <ion-card color="light">
+    <ion-card-header>
+      <ion-card-title>INFLASI BULAN INI</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-list class="ion-item">
+        <ion-item class='ion-item'>
+          <ion-label position="stacked">BULAN</ion-label>
+          <br>
+          <ion-title *ngFor="let item of items">{{item.timestamp.toDate() | date:'MMMM'}}</ion-title>
+          <br>
+        </ion-item>
+
+        <ion-item class='ion-item'>
+          <ion-label position="stacked">TAHUN</ion-label>
+          <br>
+          <ion-title *ngFor="let item of items">{{item.timestamp.toDate() | date:'yyyy'}}</ion-title>
+          <br>
+        </ion-item>
+
+        <ion-item class='ion-item'>
+          <ion-label position="stacked">PERSENTASE</ion-label>
+          <br>
+          <ion-title *ngFor="let item of items">{{item.persentase}}</ion-title>
+          <br>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+
+    <ion-card-content>
+      <ion-button (click)="andil()">andil inflasi bulan ini</ion-button>
+      <br>
+      <ion-button (click)="tahun()">inflasi tahun ke tahun</ion-button>
+      <br>
+      <ion-button (click)="bulan()">inflasi bulan sebelumnya</ion-button>
+      <br>
+      <ion-button href='https://madiunkota.bps.go.id/pressrelease.html'>Berita Resmi Statistik</ion-button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

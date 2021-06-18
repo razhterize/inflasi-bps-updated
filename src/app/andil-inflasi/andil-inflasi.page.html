@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+
+    <ion-title>
+      <div style="white-space: normal;">
+        ANDIL INFLASI BULAN INI
+      </div>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="dark" [fullscreen]="true">
+  <br>
+  
+  <ion-title>
+    <div style="white-space: normal;">
+      BADAN PUSAT STATISTIK
+    </div>
+
+    <div style="white-space: normal;">
+      KOTA MADIUN
+    </div>
+  </ion-title>
+
+  <ion-card color="light">
+    <ion-card-header>
+      <ion-card-title *ngFor="let item of items">
+        {{item.andil_inflasi}}
+      </ion-card-title>
+    </ion-card-header>
+  </ion-card>
+</ion-content>

@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+
+    <ion-title>
+      <div style="white-space: normal;">
+        INFLASI BULAN SEBELUMNYA
+      </div>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="dark" [fullscreen]="true">
+  <br>
+  <ion-title>
+    <div style="white-space: normal;">
+      BADAN PUSAT STATISTIK
+    </div>
+
+    <div style="white-space: normal;">
+      KOTA MADIUN
+    </div>
+  </ion-title>
+  <ion-card color="light">
+    <ion-item>
+      <ion-label style="white-space: normal;" posisition="floating">Tahun</ion-label>
+      <ion-select #popTahun interface='popover' placeholder='Tahun' [(ngModel)]='thn' (ionChange)='setBulan()'>
+        <ion-select-option value="">Semua</ion-select-option>
+        <ng-container *ngFor='let item of tahun; index as i'>          
+          <ion-select-option *ngIf='tahun[i] != tahun[i-1]'>{{tahun[i]}}</ion-select-option>
+        </ng-container>
+      </ion-select>
+    </ion-item>
+    <ion-item *ngIf='thn'>
+      <ion-label style="white-space: normal;" posisition="floating">Bulan</ion-label>
+      <ion-select #popBulan multiple interface='popover' placeholder='Bulan' [(ngModel)]='bln'>
+        <ion-select-option value="">Semua</ion-select-option>  
+        <ng-container *ngFor='let bulan of pilihBulan'>
+          <ion-select-option>{{bulan}}</ion-select-option>
+        </ng-container>
+      </ion-select>
+    </ion-item>
+  </ion-card>
+  <ion-card color="light">
+    <ion-list>
+      <ng-container *ngFor='let item of items | filterBy: ["tahun"]: thn | filterBy: ["bulan"]: bln'>
+        <ion-item class='item'>
+        <ion-label class="label">{{item.bulan}} {{item.tahun}}</ion-label>
+        <ion-title>{{item.persentase}}%</ion-title>
+      </ion-item>
+      </ng-container>
+      
+    </ion-list>
+  </ion-card>
+</ion-content>
