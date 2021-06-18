@@ -1,0 +1,7 @@
+{
+  "name": "inflasi-bps-updated",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
