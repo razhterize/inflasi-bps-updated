@@ -25,3 +25,17 @@
 #container a {
   text-decoration: none;
 }
+ion-content{
+  ion-title{
+    text-align: center;
+  }
+}
+ion-card{
+  ion-img{
+    align-items: center;
+    width: auto;
+    height: auto;
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+}
