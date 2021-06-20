@@ -17,6 +17,7 @@ export class InflasiTahunKeTahunPage implements OnInit {
     private data : AngularFirestore
   ) { }
 
+  // Mendapakan data dari firebase pada saat memuat halaman
   ngOnInit() {
     this.data.collection("inflasi tahun ke tahun", ref => ref.orderBy ('tahun', 'asc')).snapshotChanges().subscribe(serverItems => {
       this.items = [];
@@ -30,9 +31,10 @@ export class InflasiTahunKeTahunPage implements OnInit {
     });
     setTimeout(() => {
       this.showChart();
-    },1500);
+    },1000);
   }
-
+  
+  // Menampilkan chart line pada aplikasi
   showChart(){
     var ctx = (<any>document.getElementById('myChart')).getContext('2d');
     var myChart = new Chart(ctx, {

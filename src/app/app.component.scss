@@ -1,8 +1,12 @@
 ion-toolbar{
+    ion-title{
+        text-align: center;
+    }
     ion-label{
         ion-img{
             padding: 20px;
-            align-items: center;
+            width: auto;
+            height: auto;
         }
     }
 }
