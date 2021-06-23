@@ -33,17 +33,16 @@ export class OdMainPage implements OnInit {
   }
 
   ibi(){
-    this.router.navigate(['/inflasi-bulan-ini-od'])
+    this.router.navigate(['/od-inflasi-bulan-ini'])
   }
-
   itkt(){
-    this.router.navigate(['/inflasi-tahun-ke-tahun-od'])
+    this.router.navigate(['/od-inflasi-tahun-ke-tahun'])
   }
   ai(){
-    this.router.navigate(['/andil-inflasi-od'])
+    this.router.navigate(['/od-andil-inflasi'])
   }
   ibs(){
-    this.router.navigate(['/inflasi-bulan-sebelumnya-od'])
+    this.router.navigate(['/od-inflasi-bulan-sebelumnya'])
   }
 
   async logout(){
