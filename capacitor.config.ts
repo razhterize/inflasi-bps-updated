@@ -1,8 +1,8 @@
 import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'io.ionic.starter',
-  appName: 'inflasi-bps-updated',
+  appId: 'com.madiunkota.bps.go.id.idaman',
+  appName: 'IDAMAN',
   webDir: 'www',
   bundledWebRuntime: false
 };
